@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mennesket Med</title>
+    style.css
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <h1>Mennesket Med</h1>
+        <p>Refleksioner om teknologi, arbejdsliv og mennesket i midten.</p>
+    </div>
+
+    <nav>
+        <a href="index.html">Forside</a>
+        tanker.htmlTanker</a>
+        videoer.htmlVideoer</a>
+        om.htmlOm mig</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+
+    <h2>
+        Jeg er ikke bekymret for, om AI bliver mere intelligent.
+    </h2>
+
+    <h2>
+        Jeg er mere optaget af, om vi husker at blive ved med at være mennesker.
+    </h2>
+
+    <p class="quote">
+        - Maja Lene Fries Harsberg
+    </p>
+
+</section>
+
+<section class="manifest">
+
+    <h3>Hvorfor Mennesket Med?</h3>
+
+    <p>
+        Teknologien udvikler sig hurtigere end nogensinde.
+    </p>
+
+    <p>
+        Det er fascinerende. Det er spændende. Og det åbner muligheder,
+        som for få år siden virkede utænkelige.
+    </p>
+
+    <p>
+        Men jo mere teknologien fylder, desto vigtigere bliver det at tale om mennesket.
+    </p>
+
+    <p>
+        Hvordan vi lærer.
+    </p>
+
+    <p>
+        Hvordan vi samarbejder.
+    </p>
+
+    <p>
+        Hvordan vi træffer beslutninger.
+    </p>
+
+    <p>
+        Hvordan vi bevarer dømmekraft, empati og nysgerrighed.
+    </p>
+
+    <p>
+        Mennesket Med er et sted for refleksion.
+    </p>
+
+    <p>
+        Ikke fordi jeg har alle svarene.
+    </p>
+
+    <p>
+        Men fordi de vigtigste spørgsmål fortjener vores opmærksomhed.
+    </p>
+
+</section>
+
+<section class="latest">
+
+    <h3>Seneste tanker</h3>
+
+    <ul>
+        <li>Skal alt effektiviseres?</li>
+        <li>Hvad mister vi, når alt bliver nemmere?</li>
+        <li>Kan AI gøre os mere menneskelige?</li>
+    </ul>
+
+</section>
+
+<section class="links">
+
+    tanker.htmlLæs mine tanker</a>
+
+    videoer.htmlSe videoer</a>
+
+    om.htmlLæs om mig</a>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>
+        © Mennesket Med
+    </p>
+
+</footer>
+
+</body>
+</html>
