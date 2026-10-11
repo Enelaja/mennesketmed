@@ -100,12 +100,12 @@
   }
   .nav ul a:hover { color: var(--blaa); }
   .nav ul a.nav-cta {
-    background: var(--tekst);
+    background: var(--blaa);
     color: var(--papir);
     padding: 0.55rem 1.2rem;
     border-radius: 4px;
   }
-  .nav ul a.nav-cta:hover { background: var(--blaa); color: var(--papir); }
+  .nav ul a.nav-cta:hover { background: #42535f; color: var(--papir); }
   .menu-btn {
     display: none;
     background: none;
@@ -153,6 +153,15 @@
     margin: 1rem 0 2.5rem;
   }
   .hero p.lead { font-size: 1.15rem; max-width: 620px; margin-bottom: 1.4rem; }
+  .hero .fokus {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(34,34,34,0.1);
+    max-width: 620px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--blaa);
+  }
   .cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; }
   .btn {
     display: inline-block;
@@ -162,8 +171,8 @@
     font-size: 1rem;
     text-decoration: none;
   }
-  .btn-primary { background: var(--tekst); color: var(--papir); }
-  .btn-primary:hover { background: var(--blaa); }
+  .btn-primary { background: var(--blaa); color: var(--papir); }
+  .btn-primary:hover { background: #42535f; }
   .btn-secondary {
     border: 1.5px solid var(--tekst);
     color: var(--tekst);
@@ -194,25 +203,33 @@
     margin: 0 auto;
   }
 
-  /* Tre temaer */
-  .temaer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin-top: 3.5rem;
-  }
-  .temaer h3 {
-    font-size: 1.7rem;
-    margin-bottom: 0.6rem;
-    border-top: 2px solid var(--sand);
-    padding-top: 1.2rem;
-  }
-  @media (max-width: 760px) { .temaer { grid-template-columns: 1fr; gap: 2rem; } }
-
   /* Spørgsmålene */
   .spoergsmaal { background: var(--tekst); color: var(--papir); }
   .spoergsmaal h2 { color: var(--papir); }
   .spoergsmaal .kicker { color: var(--sand); }
+  .sp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  @media (max-width: 860px) { .sp-grid { grid-template-columns: 1fr; gap: 2rem; } }
+  .sp-gruppe h3 {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sand);
+    border-top: 1px solid rgba(250,248,243,0.25);
+    padding-top: 1.2rem;
+  }
+  .sp-gruppe .quote-list { margin-top: 0.5rem; }
+  .sp-gruppe .quote-list li {
+    padding: 1rem 0;
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    border-bottom: none;
+  }
   .quote-list { list-style: none; margin-top: 3rem; }
   .quote-list li {
     font-family: var(--serif);
@@ -256,6 +273,7 @@
     margin-top: 3.5rem;
   }
   .tid-temaer h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  @media (min-width: 1000px) { .tid-temaer { grid-template-columns: repeat(4, 1fr); gap: 3rem 2.5rem; } }
   @media (max-width: 760px) { .tid-temaer { grid-template-columns: 1fr; } }
 
   /* Billeder */
@@ -275,6 +293,19 @@
   }
 
   /* Ydelser */
+  .arbejde-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+  .arbejde-grid .ydelser-liste { margin-top: 0; }
+  .arbejde-grid .foto { margin: 0; }
+  @media (max-width: 920px) {
+    .arbejde-grid { grid-template-columns: 1fr; }
+    .arbejde-grid .foto { max-width: 520px; }
+  }
   .ydelser-liste { margin-top: 3rem; display: grid; gap: 0; max-width: 780px; }
   .ydelser-liste article {
     display: grid;
@@ -285,7 +316,9 @@
   }
   .ydelser-liste article:last-child { border-bottom: 1px solid rgba(34,34,34,0.1); }
   .ydelser-liste h3 { font-size: 1.5rem; }
-  .ydelser-liste p { align-self: center; }
+  .ydelser-liste div { align-self: center; }
+  .ydelser-liste .ydelse-lead { font-weight: 500; }
+  .ydelser-liste div p + p { margin-top: 0.3rem; }
   @media (max-width: 640px) {
     .ydelser-liste article { grid-template-columns: 1fr; gap: 0.3rem; }
   }
@@ -322,10 +355,12 @@
   .kort p { font-size: 0.95rem; color: var(--blaa); }
 
   /* Kontakt */
-  .kontakt { text-align: center; }
-  .kontakt h2 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+  .kontakt { text-align: center; background: var(--tekst); color: var(--papir); }
+  .kontakt h2 { font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--papir); }
   .kontakt p { max-width: 540px; margin: 0 auto; }
   .kontakt .cta-row { justify-content: center; }
+  .kontakt .mail-note { margin-top: 1.2rem; font-size: 0.95rem; color: rgba(250,248,243,0.75); }
+  .kontakt .mail-note a { color: rgba(250,248,243,0.75); }
 
   footer {
     border-top: 1px solid rgba(34,34,34,0.08);
@@ -356,14 +391,12 @@
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="wrap">
+      <span class="kicker">Et menneskeligt perspektiv på kunstig intelligens</span>
       <h1>Mennesket med</h1>
       <p class="tagline">Når mennesker møder ny teknologi</p>
       <p class="lead">Mennesket med handler om at gøre teknologi forståeligt og skabe tryghed i en tid med krav om evig tilpasning.</p>
       <p class="lead">Min mission er at hjælpe mennesker til at finde mening og skabe værdi med teknologi – ikke lade teknologien være meningsskabende i sig selv.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#koncept">Udforsk Mennesket med</a>
-        <a class="btn btn-secondary" href="#kontakt">Book en samtale</a>
-      </div>
+      <p class="fokus">Foredrag, workshops og sparring om kunstig intelligens – med mennesket i centrum.</p>
     </div>
   </section>
 
@@ -374,7 +407,7 @@
     <div class="wrap narrow">
       <span class="kicker">Konceptet</span>
       <h2>Hvad er Mennesket med?</h2>
-      <p>Mennesket med er et perspektiv på forholdet mellem mennesker og teknologi. Det er en måde at anskue verden på og et værdisæt at gå til sine opgaver med.</p>
+      <p>Mennesket med er et perspektiv på forholdet mellem mennesker og teknologi. Det er en måde at anskue verden på og et værdisæt for de valg, vi træffer i mødet med teknologi.</p>
       <p>Kort sagt handler det om at sikre, at beslutninger passerer et menneskes dømmekraft, stillingtagen og refleksion, før de får virkning – og ikke overlades til maskiner alene.</p>
       <p>Samtalen om kunstig intelligens kommer let til at handle om teknologien selv; om modeller, funktioner og alt det, maskinen kan. Vi glemmer at spørge, hvad det gør ved os som mennesker, ved vores arbejde, vores relationer og vores måde at træffe beslutninger på.</p>
       <p>Mennesket med vender samtalen om, så mennesket bliver hovedpersonen, mens teknologien bliver den metodik, vi bruger til at fortolke og udfolde vores rolle.</p>
@@ -383,42 +416,35 @@
     </div>
   </section>
 
-  <!-- Udgangspunktet -->
-  <section id="udfordringen">
+  <!-- Udgangspunktet: Teknologi er ikke udfordringen -->
+  <section class="spoergsmaal" id="udfordringen">
     <div class="wrap">
       <span class="kicker">Udgangspunktet</span>
       <h2>Teknologi er ikke udfordringen</h2>
-      <div class="narrow">
-        <p>Den største udfordring er sjældent teknologien.</p>
-        <p>Den største udfordring er at sikre, at mennesket forbliver aktivt tænkende, lærende og ansvarligt i mødet med nye teknologier.</p>
+      <p class="narrow">Den største udfordring er at sikre, at mennesket forbliver aktivt tænkende, lærende og ansvarligt i mødet med nye teknologier. Derfor bør vi stille os selv spørgsmålene:</p>
+      <div class="sp-grid">
+      <div class="sp-gruppe">
+        <h3>Forstå</h3>
+        <ul class="quote-list">
+          <li>Hvordan fungerer kunstig intelligens egentlig?</li>
+        </ul>
       </div>
-      <div class="temaer">
-        <div>
-          <h3>Forstå</h3>
-          <p>Hvordan fungerer kunstig intelligens egentlig?</p>
-        </div>
-        <div>
-          <h3>Reflektere</h3>
-          <p>Hvornår skal vi stole på teknologien, og hvornår skal vi udfordre den?</p>
-        </div>
-        <div>
-          <h3>Handle</h3>
-          <p>Hvordan skaber vi mere mening, bedre beslutninger og stærkere faglighed med teknologien som støtte?</p>
-        </div>
+      <div class="sp-gruppe">
+        <h3>Reflektere</h3>
+        <ul class="quote-list">
+          <li>Hvornår skal vi stole på teknologien, og hvornår skal vi udfordre den?</li>
+          <li>Hvordan bevarer vi vores motivation og lærelyst?</li>
+          <li>Hvordan sikrer vi menneskets behov for mening?</li>
+        </ul>
       </div>
-    </div>
-  </section>
-
-  <!-- Spørgsmålene -->
-  <section class="spoergsmaal" id="spoergsmaal">
-    <div class="wrap">
-      <span class="kicker">Til eftertanke</span>
-      <h2>De spørgsmål vi bør stille os selv</h2>
-      <ul class="quote-list">
-        <li>Hvad skal vi bruge den tid til, som teknologien frigør?</li>
-        <li>Hvordan bevarer vi vores motivation og lærelyst?</li>
-        <li>Hvordan sikrer vi menneskets behov for mening?</li>
-      </ul>
+      <div class="sp-gruppe">
+        <h3>Handle</h3>
+        <ul class="quote-list">
+          <li>Hvad skal vi bruge den tid til, som teknologien frigør?</li>
+          <li>Hvordan skaber vi mere mening, bedre beslutninger og stærkere faglighed med teknologien som støtte?</li>
+        </ul>
+      </div>
+      </div>
     </div>
   </section>
 
@@ -471,34 +497,47 @@
     </div>
   </section>
 
+  <hr class="divider">
+
   <!-- Ydelser / Handling -->
   <section id="ydelser">
     <div class="wrap">
       <span class="kicker">Fra refleksion til handling</span>
       <h2>Mit arbejde</h2>
-      <figure class="foto" style="max-width: 520px;">
-        <img src="maja-foredrag.jpg" alt="Maja holder foredrag foran et stort farverigt vægmaleri" width="1200" height="1774" loading="lazy">
-      </figure>
+      <div class="arbejde-grid">
       <div class="ydelser-liste">
         <article>
           <h3>Foredrag</h3>
-          <p>Skaber forståelse og perspektiv.</p>
+          <div>
+            <p class="ydelse-lead">Skaber forståelse, perspektiv og refleksion.</p>
+            <p>I får nye vinkler på forholdet mellem mennesker og teknologi og et fælles sprog for samtalen.</p>
+          </div>
         </article>
         <article>
           <h3>Workshops</h3>
-          <p>Hvor I lærer at omsætte teknologi til praksis.</p>
-        </article>
-        <article>
-          <h3>Lederseminarer</h3>
-          <p>Med fokus på strategi, ansvar og forandring.</p>
+          <div>
+            <p class="ydelse-lead">Omsætter perspektiver til praksis.</p>
+            <p>I arbejder med konkrete situationer, værktøjer og dilemmaer fra jeres egen hverdag.</p>
+          </div>
         </article>
         <article>
           <h3>Adoptionsforløb</h3>
-          <p>Med fokus på reel anvendelse i hverdagen.</p>
+          <div>
+            <p class="ydelse-lead">Gør teknologi til en del af hverdagen.</p>
+            <p>Fra de første spørgsmål til reel anvendelse, nye vaner og varig forankring.</p>
+          </div>
+        </article>
+        <article>
+          <h3>Sparring</h3>
+          <div>
+            <p class="ydelse-lead">Til ledere, fagpersoner og organisationer.</p>
+            <p>En tænke- og refleksionspartner til de spørgsmål, der opstår, når mennesker og teknologi mødes.</p>
+          </div>
         </article>
       </div>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#kontakt">Book en samtale</a>
+      <figure class="foto">
+        <img src="maja-foredrag.jpg" alt="Maja holder foredrag foran et stort farverigt vægmaleri" width="1200" height="1774" loading="lazy">
+      </figure>
       </div>
     </div>
   </section>
@@ -537,49 +576,28 @@
         <div>
           <span class="kicker">Mennesket bag</span>
           <h2>Om Maja</h2>
+          <p>Mit navn er Maja Fries Harsberg.</p>
           <p>Mennesket med er et perspektiv på forholdet mellem mennesker og teknologi. Jeg hjælper med at omsætte det til praksis for mennesker og organisationer.</p>
           <p>Jeg er cand.mag. i kultur, kommunikation og globalisering og har arbejdet med projektledelse, forretningsrådgivning og ledelse i it-branchen. I dag hjælper jeg mennesker og organisationer med at forstå, anvende og tage stilling til kunstig intelligens.</p>
           <p>Mit arbejde begynder sjældent med teknologien. Det begynder med de mennesker, der skal bruge den.</p>
-          <p>Jeg gør det komplekse forståeligt og hjælper med at skabe tryghed, refleksion og handling i en tid, hvor teknologien udvikler sig hurtigere end nogensinde.</p>
+          <p>Jeg gør det komplekse forståeligt og hjælper mennesker med at bevare dømmekraft, retning og mening i en tid præget af teknologisk forandring.</p>
           <p>For teknologien er sjældent udfordringen. Det er forståelsen af den.</p>
         </div>
         <figure class="foto">
-          <img src="maja-portraet.jpg" alt="Portræt af Maja Harsberg" width="900" height="1031" loading="lazy">
+          <img src="maja-portraet.jpg" alt="Portræt af Maja Fries Harsberg" width="900" height="1031" loading="lazy">
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- Mere fra Mennesket med -->
-  <section id="mere">
-    <div class="wrap">
-      <span class="kicker">Omdrejningspunktet</span>
-      <h2>Mere menneske med</h2>
-      <p class="narrow">Er du nysgerrig på mere, fortsætter samtalen på LinkedIn og X. Og hvis du vil udforske perspektiverne i praksis gennem et foredrag, en workshop eller et seminar, er du altid velkommen til at <a href="#kontakt">kontakte mig</a>.</p>
-      <div class="kort-grid">
-        <a class="kort" href="https://www.linkedin.com/in/maja-harsberg/" aria-label="LinkedIn – refleksioner og observationer">
-          <h3>LinkedIn</h3>
-          <p>Refleksioner og observationer</p>
-        </a>
-        <a class="kort" href="https://x.com/mennesketmed" aria-label="X – korte tanker og nedslag">
-          <h3>X</h3>
-          <p>Korte tanker og nedslag</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
   <!-- Kontakt -->
   <section class="kontakt" id="kontakt">
     <div class="wrap">
-      <h2>Det starter med en samtale</h2>
-      <p>Om et foredrag, en workshop – eller bare om, hvordan I tager mennesker med i mødet med ny teknologi.</p>
+      <h2>Det starter med en samtale mellem mennesker</h2>
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:mha@contextand.com">Skriv en e-mail</a>
-        <a class="btn btn-secondary" href="https://www.linkedin.com/in/maja-harsberg/">Find mig på LinkedIn</a>
       </div>
+      <p class="mail-note">(<a href="mailto:mha@contextand.com">mha@contextand.com</a>)</p>
     </div>
   </section>
 
