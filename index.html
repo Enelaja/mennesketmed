@@ -178,6 +178,8 @@
     color: var(--tekst);
   }
   .btn-secondary:hover { border-color: var(--blaa); color: var(--blaa); }
+  .btn-lys { border-color: rgba(250,248,243,0.6); color: var(--papir); }
+  .btn-lys:hover { border-color: var(--papir); color: var(--papir); }
 
   /* ---------- Sektioner ---------- */
   section { padding: clamp(4.5rem, 10vh, 8rem) 0; }
@@ -291,6 +293,12 @@
     color: var(--blaa);
     margin-top: 0.7rem;
   }
+  .foto-fuld { margin: clamp(3.5rem, 8vh, 5rem) 0 0; }
+  .foto-fuld img {
+    border-radius: 0;
+    height: clamp(320px, 55vh, 560px);
+    object-fit: cover;
+  }
 
   /* Ydelser */
   .arbejde-grid {
@@ -322,16 +330,6 @@
   @media (max-width: 640px) {
     .ydelser-liste article { grid-template-columns: 1fr; gap: 0.3rem; }
   }
-
-  /* Om Maja */
-  .om-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 4rem;
-    align-items: start;
-  }
-  .om-grid .foto { margin: 0; }
-  @media (max-width: 860px) { .om-grid { grid-template-columns: 1fr; } }
 
   /* Kanaler */
   .kort-grid {
@@ -369,6 +367,8 @@
     color: var(--blaa);
     text-align: center;
   }
+  footer p + p { margin-top: 0.4rem; }
+  footer a { color: var(--blaa); }
 </style>
 </head>
 <body>
@@ -379,6 +379,7 @@
     <a class="brand" href="#top">Mennesket med</a>
     <button class="menu-btn" aria-expanded="false" aria-controls="menu" onclick="const m=document.getElementById('menu');const o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
     <ul id="menu">
+      <li><a href="#ydelser">Rådgivning</a></li>
       <li><a href="#om">Mennesket bag</a></li>
       <li><a class="nav-cta" href="#kontakt">Kontakt</a></li>
     </ul>
@@ -394,7 +395,7 @@
       <h1>Mennesket med</h1>
       <p class="tagline">Når mennesker møder ny teknologi</p>
       <p class="lead">Mennesket med handler om at gøre teknologi forståeligt og skabe tryghed i en tid med krav om evig tilpasning.</p>
-      <p class="fokus">Foredrag, workshops og sparring om kunstig intelligens – med mennesket i centrum.</p>
+      <p class="fokus">Rådgivning, foredrag og workshops om kunstig intelligens for ledere og organisationer – med mennesket i centrum.</p>
     </div>
   </section>
 
@@ -489,10 +490,10 @@
           <p>Tid til at stoppe op og spørge, om vi er på vej det rigtige sted hen. Måske er det den vigtigste brug af den tid, teknologien giver tilbage.</p>
         </div>
       </div>
-      <figure class="foto">
-        <img src="refleksion-ved-aaen.jpg" alt="Maja sidder på store sten ved en å i aftensol med en gammel jernbanebro i baggrunden" width="1400" height="1050" loading="lazy">
-      </figure>
     </div>
+    <figure class="foto foto-fuld">
+      <img src="refleksion-ved-aaen.jpg" alt="Et menneske sidder i eftertanke på store sten ved en å, med en gammel jernbanebro i baggrunden" width="1400" height="1050" loading="lazy">
+    </figure>
   </section>
 
   <hr class="divider">
@@ -504,6 +505,12 @@
       <h2>Mit arbejde</h2>
       <div class="arbejde-grid">
       <div class="ydelser-liste">
+        <article>
+          <h3>Rådgivning &amp; sparring</h3>
+          <div>
+            <p class="ydelse-lead">Til ledere, fagpersoner og organisationer.</p>
+          </div>
+        </article>
         <article>
           <h3>Foredrag</h3>
           <div>
@@ -520,12 +527,6 @@
           <h3>Adoptionsforløb</h3>
           <div>
             <p class="ydelse-lead">Gør teknologi til en del af hverdagen.</p>
-          </div>
-        </article>
-        <article>
-          <h3>Sparring</h3>
-          <div>
-            <p class="ydelse-lead">Til ledere, fagpersoner og organisationer.</p>
           </div>
         </article>
       </div>
@@ -565,19 +566,12 @@
 
   <!-- Om Maja -->
   <section id="om">
-    <div class="wrap">
-      <div class="om-grid">
-        <div>
-          <span class="kicker">Mennesket bag</span>
-          <h2>Om Maja</h2>
-          <p>Mit navn er Maja Fries Harsberg.</p>
-          <p>Jeg hjælper mennesker og organisationer med at forstå, anvende og tage stilling til kunstig intelligens – med en baggrund som cand.mag. i kultur, kommunikation og globalisering og mange års erfaring fra it-branchen.</p>
-          <p>Mit arbejde begynder sjældent med teknologien. Det begynder med de mennesker, der skal bruge den.</p>
-        </div>
-        <figure class="foto">
-          <img src="maja-portraet.jpg" alt="Portræt af Maja Fries Harsberg" width="900" height="1031" loading="lazy">
-        </figure>
-      </div>
+    <div class="wrap narrow">
+      <span class="kicker">Mennesket bag</span>
+      <h2>Om Maja</h2>
+      <p>Mit navn er Maja Fries Harsberg.</p>
+      <p>Jeg hjælper mennesker og organisationer med at forstå, anvende og tage stilling til kunstig intelligens – med en baggrund som cand.mag. i kultur, kommunikation og globalisering og mere end 15 års erfaring med Microsoft-teknologi, projektledelse og organisatorisk forandring.</p>
+      <p>Mit arbejde begynder sjældent med teknologien. Det begynder med de mennesker, der skal bruge den.</p>
     </div>
   </section>
 
@@ -585,8 +579,10 @@
   <section class="kontakt" id="kontakt">
     <div class="wrap">
       <h2>Det starter med en samtale mellem mennesker</h2>
+      <p>Jeg er altid klar til en kop kaffe – fysisk eller virtuelt.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:mha@contextand.com">Skriv en e-mail</a>
+        <a class="btn btn-secondary btn-lys" href="https://www.linkedin.com/in/maja-harsberg/">Find mig på LinkedIn</a>
       </div>
       <p class="mail-note">(<a href="mailto:mha@contextand.com">mha@contextand.com</a>)</p>
     </div>
@@ -597,6 +593,7 @@
 <footer>
   <div class="wrap">
     <p>Mennesket med · Når mennesker møder ny teknologi</p>
+    <p>Maja Fries Harsberg · <a href="mailto:mha@contextand.com">mha@contextand.com</a></p>
   </div>
 </footer>
 
